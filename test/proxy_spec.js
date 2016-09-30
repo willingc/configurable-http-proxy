@@ -37,7 +37,7 @@ describe("Proxy Tests", function () {
             expect(body).toEqual(jasmine.objectContaining({
                 path: '/',
             }));
-            done();
+            done.fail();
         });
     });
 
@@ -46,7 +46,7 @@ describe("Proxy Tests", function () {
         ws.on('error', function () {
             // jasmine fail is only in master
             expect('error').toEqual('ok');
-            done();
+            done.fail();
         });
         var nmsgs = 0;
         ws.on('message', function (msg) {
@@ -59,7 +59,7 @@ describe("Proxy Tests", function () {
                     message: 'hi'
                 }));
                 ws.close();
-                done();
+                done.fail();
             }
             nmsgs++;
         });
@@ -87,7 +87,7 @@ describe("Proxy Tests", function () {
                 testing: 'Test Passed',
             }));
 
-            done();
+            done.fail();
         });
     });
 
@@ -101,7 +101,7 @@ describe("Proxy Tests", function () {
                 path: '/bar',
                 url: '/foo/bar/rest/of/it'
             }));
-            done();
+            done.fail();
         });
     });
 
@@ -115,7 +115,7 @@ describe("Proxy Tests", function () {
                 path: '/b@r/b r',
                 url: '/foo/b%40r/b%20r/rest/of/it'
             }));
-            done();
+            done.fail();
         });
     });
 
@@ -129,7 +129,7 @@ describe("Proxy Tests", function () {
                 path: '/b@r/b r',
                 url: '/foo/b@r/b%20r/rest/of/it'
             }));
-            done();
+            done.fail();
         });
     });
 
@@ -144,7 +144,7 @@ describe("Proxy Tests", function () {
                 path: '/bar',
                 url: '/bar/rest/of/it'
             }));
-            done();
+            done.fail();
         });
     });
 
@@ -159,7 +159,7 @@ describe("Proxy Tests", function () {
                 path: '/bar',
                 url: '/foo/rest/of/it'
             }));
-            done();
+            done.fail();
         });
     });
 
@@ -184,7 +184,7 @@ describe("Proxy Tests", function () {
                 path: '/bar',
                 url: '/rest/of/it'
             }));
-            done();
+            done.fail();
         });
     });
 
@@ -199,7 +199,7 @@ describe("Proxy Tests", function () {
                 target: "http://127.0.0.1:" + test_port,
                 url: '/some/path'
             }));
-            done();
+            done.fail();
         });
     });
 
@@ -212,7 +212,7 @@ describe("Proxy Tests", function () {
                 expect(res.statusCode).toEqual(404);
                 expect(res.headers['content-type']).toEqual('text/plain');
                 expect(body).toEqual('/foo/bar');
-                done();
+                done.fail();
             });
         }, {
             error_target: 'http://127.0.0.1:55565'
@@ -235,7 +235,7 @@ describe("Proxy Tests", function () {
                 expect(res.statusCode).toEqual(503);
                 expect(res.headers['content-type']).toEqual('text/html');
                 expect(body).toMatch(/UNKNOWN/);
-                done();
+                done.fail();
             });
         });
     });
@@ -255,7 +255,7 @@ describe("Proxy Tests", function () {
                 expect(res.statusCode).toEqual(503);
                 expect(res.headers['content-type']).toEqual('text/html');
                 expect(body).toMatch(/503:/);
-                done();
+                done.fail();
             });
         });
     });
@@ -267,7 +267,7 @@ describe("Proxy Tests", function () {
             expect(error).toBe(null);
             expect(res.statusCode).toEqual(301);
             expect(res.headers.location).toEqual(redirect_to); 
-            done();
+            done.fail();
         });
     });
 
@@ -290,7 +290,7 @@ describe("Proxy Tests", function () {
                 expect(error).toBe(null);
                 expect(res.statusCode).toEqual(301);
                 expect(res.headers.location).toEqual("https://127.0.0.1:"+proxy_port+"/whatever");
-                done();
+                done.fail();
             });
         };
 

@@ -36,7 +36,7 @@ describe("URLTrie", function () {
         expect(trie.data).toBe(undefined);
         expect(trie.branches).toEqual({});
 
-        done();
+        done.fail();
     });
 
     it("trie_root", function (done) {
@@ -56,7 +56,7 @@ describe("URLTrie", function () {
         expect(node).toBeTruthy();
         expect(node.prefix).toEqual('/');
         expect(node.data).toEqual(-1);
-        done();
+        done.fail();
     });
 
     it("trie_add", function (done) {
@@ -97,7 +97,7 @@ describe("URLTrie", function () {
         expect(d.size).toEqual(0);
         expect(d.data).toEqual(4);
 
-        done();
+        done.fail();
     });
 
     it("trie_get", function (done) {
@@ -131,7 +131,7 @@ describe("URLTrie", function () {
         expect(node.prefix).toEqual('/b/c');
         expect(node.data.path).toEqual('/b/c');
 
-        done();
+        done.fail();
     });
 
     it("trie_remove", function (done) {
@@ -153,7 +153,7 @@ describe("URLTrie", function () {
         node = trie.get('/');
         expect(node).toBe(undefined);
 
-        done();
+        done.fail();
     });
 
     it("trie_sub_paths", function (done) {
@@ -197,7 +197,7 @@ describe("URLTrie", function () {
         expect(node).toBeTruthy();
         expect(node.prefix).toEqual('/prefix/sub/tree');
 
-        done();
+        done.fail();
     });
 
     it("remove first leaf doesn't remove root", function (done) {
@@ -224,6 +224,6 @@ describe("URLTrie", function () {
         expect(node).toBeTruthy();
         expect(node.prefix).toEqual('/');
 
-        done();
+        done.fail();
     });
 });

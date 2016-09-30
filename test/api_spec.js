@@ -65,7 +65,7 @@ describe("API Tests", function () {
             var keys = Object.keys(body);
             expect(keys.length).toEqual(1);
             expect(keys).toContain('/');
-            done();
+            done.fail();
         });
     });
 
@@ -82,7 +82,7 @@ describe("API Tests", function () {
             var route = proxy.routes['/user/foo'];
             expect(route.target).toEqual(target);
             expect(typeof route.last_activity).toEqual('object');
-            done();
+            done.fail();
         });
     });
 
@@ -101,7 +101,7 @@ describe("API Tests", function () {
             expect(typeof route.last_activity).toEqual('object');
             route = proxy.target_for_req({url: '/user/foo@bar/path'});
             expect(route.target).toEqual(target);
-            done();
+            done.fail();
         });
     });
 
@@ -118,7 +118,7 @@ describe("API Tests", function () {
             var route = proxy.routes['/'];
             expect(route.target).toEqual(target);
             expect(typeof route.last_activity).toEqual('object');
-            done();
+            done.fail();
         });
     });
 
@@ -133,7 +133,7 @@ describe("API Tests", function () {
             expect(res.statusCode).toEqual(204);
             expect(res.body).toEqual('');
             expect(proxy.routes[path]).toBe(undefined);
-            done();
+            done.fail();
         });
     });
 
@@ -202,7 +202,7 @@ describe("API Tests", function () {
                 });
                 seen += 1;
                 if (seen === tests.length) {
-                    done();
+                    done.fail();
                 } else {
                     do_req(seen);
                 }
