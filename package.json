@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "jasmine": "^2.5.1",
+    "graceful-fs": "^4.1.9",
     "jshint": "^2.9.2",
     "nyc": "^6.4.0",
     "request": "~2",
