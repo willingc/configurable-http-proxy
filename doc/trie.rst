@@ -1,0 +1,4 @@
+Trie
+====
+
+.. autofunction:: trimPrefix(prefix)
