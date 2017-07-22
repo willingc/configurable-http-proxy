@@ -6,6 +6,6 @@ dependencies:
 - python=3.5
 - sphinx>=1.4, !=1.5.4
 - sphinx_rtd_theme
+- jsdoc
 - pip:
    - sphinx_js
-   - jsdoc
