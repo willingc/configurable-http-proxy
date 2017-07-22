@@ -18,6 +18,7 @@ Contents
   intro
   installation
   usage
+  rest-api
   chp
   trie
 

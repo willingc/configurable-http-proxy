@@ -18,7 +18,8 @@ Configurable HTTP Proxy
 .. autofunction:: camelCaseify(options)
 
 
-Reference for the class:
+Class definition
+----------------
 
 .. autoclass:: ConfigurableProxy(options)
    :members: addRoute, removeRoute
