@@ -2,10 +2,9 @@ Using the REST API
 ==================
 
 The configurable-http-proxy REST API is documented and available as:
-- a nicely rendered, interactive version at the
-`petstore swagger site <>`_
-- a `swagger specification file <>`_ in this repo
 
+- a nicely rendered, interactive version at the `petstore swagger site <http://petstore.swagger.io/?url=https://raw.githubusercontent.com/jupyterhub/configurable-http-proxy/master/doc/rest-api.yml#/default>`_
+- a `swagger specification file <https://github.com/jupyterhub/configurable-http-proxy/blob/master/doc/rest-api.yml>`_ in this repo
 
 Basics
 ------
