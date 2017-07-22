@@ -8,3 +8,4 @@ dependencies:
 - sphinx_rtd_theme
 - pip:
    - sphinx_js
+   - jsdoc
